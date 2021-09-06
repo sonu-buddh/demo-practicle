@@ -1,13 +1,14 @@
 class FollowController < ApplicationController
     def follow
-        User.follow(params[:user])
+        Followship.create(follower_id: current_user.id, followee_id: params[:id])
+        redirect_to root_path
     end
 
     def following
-        @following = Use.all
+        @following = Followship.where(follower_id: current_user.id)
     end
     
     def follower
-        @follower = Use.all
+        @followers = Followship.where(followee_id: current_user.id)
     end
 end

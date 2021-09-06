@@ -1,0 +1,31 @@
+<div class="page-wrapper">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12 col-lg-8 col-sm-12 offset-md-2">
+                <div class="card white-box p-0">
+                <% @following.each do |following| %>
+                <% user = following.followee %>
+                    <div class="comment-widgets">
+                        <div class="d-flex flex-row comment-row p-3 mt-0">
+                            <div class="p-2">
+                               <% if user.profile_pic.present? %>
+                                    <%= image_tag user.profile_pic , alt: "user", width: "50", class: "circle_image" %>
+                                <% else %>
+                                    <%= image_tag "img_avatar.png" , alt: "user", width: "50", class: "circle_image" %>
+                                <% end%>
+                            </div>
+                            <div class="comment-text ps-2 ps-md-3 w-100">
+                                <h5 class="font-medium"><%= user.first_name  %></h5>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                <% end %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+                

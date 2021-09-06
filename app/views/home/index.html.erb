@@ -19,7 +19,7 @@
                                 <span class="mb-3 d-block"><%= question.answers.first %></span>
                                 <div class="comment-footer d-md-flex align-items-center">
                                 <a href="#" class="tag mt-2">Ruby On rails</a>
-                                    <%= link_to "Follow User" , follow_follow_path(question.user), class: "text-muted fs-2 ms-auto mt-2 mr-2 mt-md-0" %>
+                                    <%= link_to "Follow User" , follow_follow_path(id: question.user.id), class: "text-muted fs-2 ms-auto mt-2 mr-2 mt-md-0" %>
                                     <%= link_to "Follow Topic" , root_path, class: "text-muted fs-2 ms-auto mt-2 mr-2 mt-md-0" %>
                                 </div>
                             </div>
