@@ -1,0 +1,13 @@
+<div class="header">
+    <%= link_to current_user.first_name.capitalize , root_path , class: "logo" %>
+  <div class="header-right">
+      <%= link_to "Following" , root_path, class: "" %>
+      <%= link_to "Follower" , root_path, class: ""  %>
+      <%= link_to 'My Question', home_my_questions_path %>
+    <% if user_signed_in? %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    <% else %>
+        <%= link_to 'Login', new_user_session_path %>
+    <% end %>
+  </div>
+</div>

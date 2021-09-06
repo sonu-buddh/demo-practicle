@@ -1,0 +1,35 @@
+<div class="page-wrapper">
+    <div class="container-fluid">
+
+        <div class="row">
+        <% @questions.each do |question| %>
+            <div class="col-md-12 col-lg-8 col-sm-12 offset-md-2">
+                <div class="card white-box p-0">
+                    <div class="card-body">
+                        <h3 class="box-title mb-0"><%= %></h3>
+                    <a href="#" class="tag mt-2"><%= question.user.username %></a>
+                    </div>
+                    <hr>
+                    <div class="comment-widgets">
+                        <div class="d-flex flex-row comment-row p-3 mt-0">
+                            <div class="p-2">
+                                <%= image_tag "img_avatar.png" , alt: "user", width: "50", class: "circle_image" %>
+                            </div>
+                            <div class="comment-text ps-2 ps-md-3 w-100">
+                                <h5 class="font-medium"><%= question.user.username %></h5>
+                                <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry.It has survived not only five centuries. </span>
+                                <div class="comment-footer d-md-flex align-items-center">
+                                    <%= link_to "Follow User" , root_path, class: "text-muted fs-2 ms-auto mt-2 mr-2 mt-md-0" %>
+                                    <%= link_to "Follow Topic" , root_path, class: "text-muted fs-2 ms-auto mt-2 mr-2 mt-md-0" %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+        </div>
+
+    </div>
+</div>
+                
