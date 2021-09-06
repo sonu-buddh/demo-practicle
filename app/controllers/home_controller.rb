@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @answer = Answer.new
     @questions = Question.all
   end
   

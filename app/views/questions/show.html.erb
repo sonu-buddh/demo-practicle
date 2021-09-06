@@ -20,7 +20,11 @@
                             </div>
                             <div class="comment-text ps-2 ps-md-3 w-100">
                                 <h5 class="font-medium"><%= @question.user.username %></h5>
-                                <span class="mb-3 d-block"><%= @question.answers.present? %> </span>
+                                <span class="mb-3 d-block">
+                               <% @question.answers.each do |ans| %>
+                                <%= ans.description %><hr>
+                                <% end %>
+                                </span>
                                 <div class="comment-footer d-md-flex align-items-center">
                                     <%= link_to "Follow User" , root_path, class: "text-muted fs-2 ms-auto mt-2 mr-2 mt-md-0" %>
                                     <%= link_to "Follow Topic" , root_path, class: "text-muted fs-2 ms-auto mt-2 mr-2 mt-md-0" %>
